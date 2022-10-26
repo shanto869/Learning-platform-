@@ -29,8 +29,8 @@ const Header = () => {
         <div>
             <nav className="navbar navbar-expand-lg background text-white ">
                 <div className="container">
-                    <Link className="navbar-brand fs-2 fw-bold text-yellow font-ubuntu" to="/"><span className="logo-color "> Primo </span>
-                        Quiz Context</Link>
+                    <Link className="navbar-brand fs-2 fw-bold text-yellow font-ubuntu" to="/"><img src="https://cdn-icons-png.flaticon.com/512/3213/3213003.png" style={{ width: '35px', heigth: '35px' }} alt="" /> <span className="logo-color "> Better </span>
+                        Learning</Link>
                     <button className="navbar-toggler text-white" type="button" data-bs-toggle="collapse"
                         data-bs-target="#navbar-menu" aria-controls="navbar-menu" aria-expanded="false"
                         aria-label="Toggle navigation">
