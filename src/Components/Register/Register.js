@@ -1,3 +1,4 @@
+import { GithubAuthProvider, GoogleAuthProvider } from 'firebase/auth';
 import React from 'react';
 import { useContext } from 'react';
 import Button from 'react-bootstrap/Button';
@@ -8,7 +9,10 @@ import { Link } from 'react-router-dom';
 import { AuthContext } from '../../ContextProvider/ContextProvider';
 
 const Register = () => {
-    const { createUserWithEmail, updateUserProfile } = useContext(AuthContext);
+    const { createUserWithEmail, updateUserProfile, signInWithGoogle, signInWithGitHub } = useContext(AuthContext);
+
+    const googleProvider = new GoogleAuthProvider();
+    const gitProvider = new GithubAuthProvider();
 
     const handleSubmit = (event) => {
         event.preventDefault();
@@ -26,7 +30,45 @@ const Register = () => {
                 const user = result.user;
                 console.log(user);
                 toast.success('Successfully create an account');
-                form.reset()
+                handleUpdateUserProfile(name, photoUrl)
+                form.reset();
+            })
+            .catch(error => {
+                toast.error(error.message)
+            })
+    }
+
+
+    // update profile
+    const handleUpdateUserProfile = (name, photoUrl) => {
+        const profile = { displayName: name, photoURL: photoUrl }
+        updateUserProfile(profile)
+            .then(() => {
+                console.log('updated profile')
+            })
+            .catch(error => toast.error(error))
+    }
+
+    // google sing in
+    const handleGoogleSignIn = () => {
+        signInWithGoogle(googleProvider)
+            .then(result => {
+                const user = result.user;
+                console.log(user);
+                toast.success('Successfully sign up')
+            })
+            .catch(error => {
+                toast.error(error.message)
+            })
+    }
+
+    // git Sign in
+    const handleGitSignIn = () => {
+        signInWithGitHub(gitProvider)
+            .then(result => {
+                const user = result.user;
+                console.log(user);
+                toast.success('Successfully Sign in')
             })
             .catch(error => {
                 toast.error(error.message)
@@ -72,8 +114,8 @@ const Register = () => {
             <div className='mx-auto w-100 text-center mt-3'>
                 <small>Or Sign Up Using</small>
                 <div className='mt-2'>
-                    <FaGooglePlus className='icons me-2'></FaGooglePlus>
-                    <FaGithub className='icons'></FaGithub>
+                    <FaGooglePlus onClick={handleGoogleSignIn} className='icons me-2'></FaGooglePlus>
+                    <FaGithub onClick={handleGitSignIn} className='icons'></FaGithub>
                 </div>
             </div>
         </div>

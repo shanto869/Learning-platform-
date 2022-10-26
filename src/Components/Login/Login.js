@@ -10,7 +10,7 @@ import { GithubAuthProvider, GoogleAuthProvider } from 'firebase/auth';
 import toast from 'react-hot-toast';
 
 const Login = () => {
-    const { signInWithGoogle, signInWithGitHub } = useContext(AuthContext);
+    const { signInUser, signInWithGoogle, signInWithGitHub } = useContext(AuthContext);
 
     const googleProvider = new GoogleAuthProvider();
     const gitProvider = new GithubAuthProvider();
@@ -21,7 +21,18 @@ const Login = () => {
         const form = event.target;
         const email = form.email.value;
         const password = form.password.value;
-        console.log(email, password)
+        console.log(email, password);
+
+        // sign in with email and password
+        signInUser(email, password)
+            .then(result => {
+                const user = result.user;
+                console.log(user)
+                toast.success('Successfully Loged in')
+            })
+            .catch(error => {
+                toast.error(error.message)
+            })
     }
 
     // google sing in

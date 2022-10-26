@@ -10,6 +10,7 @@ import toast from 'react-hot-toast';
 
 const Header = () => {
     const { user, logOut } = useContext(AuthContext);
+    console.log(user)
 
     const [darkTheme, setDarkTheme] = useState(false);
 

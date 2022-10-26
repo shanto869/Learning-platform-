@@ -3,11 +3,13 @@ import Courses from "../Components/Courses/Courses";
 import Home from "../Components/Home/Home";
 import Login from "../Components/Login/Login";
 import Register from "../Components/Register/Register";
+import ErrorPage from "../ErrorPage/ErrorPage";
 import Main from "../Layout/Main";
 
 export const routers = createBrowserRouter([
     {
-        path: '/', element: <Main></Main>, children: [
+        path: '/', element: <Main></Main>, errorElement: <ErrorPage></ErrorPage>,
+        children: [
             {
                 path: '/', element: <Home></Home>
             },
@@ -18,8 +20,10 @@ export const routers = createBrowserRouter([
                 path: '/register', element: <Register></Register>
             },
             {
-                path: '/courses', element: <Courses></Courses>
-            }
+                path: '/courses', element: <Courses></Courses>,
+                loader: () => fetch('http://localhost:5000/courses')
+            },
+
         ]
     }
 ])
