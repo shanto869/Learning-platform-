@@ -14,7 +14,7 @@ const Course = ({ course }) => {
             <div className='px-3'>
                 <h5 className='my-3'><Link to={`/course/${id}`} className='title'>{course_title}</Link></h5>
                 <strong className='d-block'>Ratings: {ratings} <FaStar></FaStar>  </strong>
-                <strong>Purchase: {purchase_quantity}</strong>
+                <strong>Enrolled: {purchase_quantity}</strong>
                 <hr />
                 <div className='d-flex justify-content-between'>
                     <span>
