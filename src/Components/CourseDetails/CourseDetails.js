@@ -1,6 +1,6 @@
 import React from 'react';
 import './CourseDetails.css'
-import { useLoaderData } from 'react-router-dom';
+import { Link, useLoaderData } from 'react-router-dom';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import { FaDownload, FaStar } from 'react-icons/fa';
@@ -9,7 +9,6 @@ import { FaDownload, FaStar } from 'react-icons/fa';
 const CourseDetails = () => {
     const detail = useLoaderData();
     const { course_price, course_title, details, id, instractor, instractor_img, picture, purchase_quantity, ratings, total_classes, instractor_qualification } = detail;
-    console.log(detail)
 
     return (
         <div className='mx-5 px-5 mt-5'>
@@ -52,11 +51,13 @@ const CourseDetails = () => {
                     </>
                     <span className='d-flex justify-content-end align-items-center mt-4'>
                         <h5>Price of the course: {course_price}</h5>
-                        <Button className='ms-5' variant="primary">Go somewhere</Button>
+                        <Link to={`/checkout/${id}`}>
+                            <Button className='ms-5 px-4 py-3 btn button-style'>Get Primium Access</Button>
+                        </Link>
 
                     </span>
                 </Card.Body>
-                <Card.Footer className="text-muted">2 days ago</Card.Footer>
+                <Card.Footer className="text-muted"></Card.Footer>
             </Card>
         </div>
     );

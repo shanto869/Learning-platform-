@@ -31,6 +31,7 @@
 .button-style:hover {
     background-color: #6440fb !important;
     border-color: #6440fb !important;
+    color: white;
 }
 
 

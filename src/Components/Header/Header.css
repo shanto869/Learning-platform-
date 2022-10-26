@@ -62,23 +62,6 @@
     color: #ffc107 !important;
 }
 
-
-/* .nav-link::after {
-    content: '';
-    position: absolute;
-    height: 2px;
-    width: 80%;
-    bottom: 0;
-    left: 8px;
-    background-color: #FF6A3D;
-    transform: scale(0, 1);
-    transition: transform .4s ease;
-}
-
-.nav-link:hover::after {
-    transform: scale(1, 1);
-} */
-
 .logo-color {
     color: #FF6A3D !important;
 }
