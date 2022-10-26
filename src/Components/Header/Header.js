@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './Header.css'
 import { Link, NavLink } from 'react-router-dom';
-import { FaToggleOn, FaToggleOff } from 'react-icons/fa'
+import { FaToggleOn, FaToggleOff, FaBuffer } from 'react-icons/fa'
 import { useContext } from 'react';
 import { AuthContext } from '../../ContextProvider/ContextProvider';
 import { Image, Tooltip } from 'react-bootstrap';
@@ -29,7 +29,9 @@ const Header = () => {
         <div>
             <nav className="navbar navbar-expand-lg background text-white ">
                 <div className="container">
-                    <Link className="navbar-brand fs-2 fw-bold text-yellow font-ubuntu" to="/"><img src="https://cdn-icons-png.flaticon.com/512/3213/3213003.png" style={{ width: '35px', heigth: '35px' }} alt="" /> <span className="logo-color "> Better </span>
+                    <Link className="navbar-brand fs-2 fw-bold text-yellow font-ubuntu" to="/">
+                        <FaBuffer></FaBuffer>
+                        <span className="logo-color "> Better </span>
                         Learning</Link>
                     <button className="navbar-toggler text-white" type="button" data-bs-toggle="collapse"
                         data-bs-target="#navbar-menu" aria-controls="navbar-menu" aria-expanded="false"
