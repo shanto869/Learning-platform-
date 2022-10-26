@@ -11,12 +11,17 @@ const Courses = () => {
         <div className='courses-container'>
             <div className='course-title'>
                 <h5>Total Courses: {courses.length}</h5>
-                <p>
+                <span className='side-navbar'>
                     {
-                        courses.map(course => <NavLink to={`/course/${course.id}`}
-                            key={course.id} className="side-nav d-block" >{course.course_title}</NavLink>)
+                        courses.map(course => <>
+                            <button className='rounded border-none px-2 py-2 button-style side-nav-btn'>
+                                <NavLink to={`/course/${course.id}`}
+                                    key={course.id} className="side-nav d-block" >{course.course_title}
+                                </NavLink>
+                            </button>
+                        </>)
                     }
-                </p>
+                </span>
             </div>
             <div>
                 <h4 className='text-center my-4'>Our Most Popular Courses</h4>

@@ -7,14 +7,14 @@
 
 .course-title {
     box-shadow: rgba(17, 17, 26, 0.1) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 48px;
-    padding: 30px 50px;
+    padding: 30px 40px;
     border-radius: 10px;
     /* width: ; */
 }
 
 .side-nav {
     text-decoration: none;
-    margin-top: 10px;
+    transition: all linear .3s;
 }
 
 .course-card {
@@ -24,4 +24,19 @@
     padding: 10px;
     box-shadow: rgba(17, 17, 26, 0.1) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 48px;
     border-radius: 8px;
+}
+
+.side-navbar {
+    display: grid;
+    grid-template-columns: 1fr;
+    row-gap: 15px;
+}
+
+.side-nav-btn {
+    border-color: #6440fb;
+    /* transition: cubic-bezier(0.25, 0.46, 0.45, 0.94); */
+}
+
+.side-nav-btn:hover .side-nav {
+    color: white !important;
 }
