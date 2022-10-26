@@ -34,7 +34,6 @@ const Header = () => {
                     <button className="navbar-toggler text-white" type="button" data-bs-toggle="collapse"
                         data-bs-target="#navbar-menu" aria-controls="navbar-menu" aria-expanded="false"
                         aria-label="Toggle navigation">
-                        {/* <Bars3Icon className="icons text-white" /> */}
                     </button>
                     <div className="collapse navbar-collapse menu-font fs-6" id="navbar-menu">
                         <div className="navbar-nav ms-auto text-white                                            ">
