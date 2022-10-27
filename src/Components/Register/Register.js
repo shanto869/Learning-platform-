@@ -91,7 +91,7 @@ const Register = () => {
 
 
     return (
-        <div className='w-50 mx-auto mt-4 form-container'>
+        <div className='w-50 mx-auto mb-4 form-container'>
             <h4 className='text-center mb-4'>Sign Up Account</h4>
             <Form onSubmit={handleSubmit} className='form'>
 

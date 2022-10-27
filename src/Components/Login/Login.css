@@ -26,3 +26,9 @@
 .form {
     font-size: 16px !important;
 }
+
+.login-btn {
+    border: 2px solid #6440fb !important;
+    border-color: #6440fb !important;
+    color: #6440fb !important;
+}

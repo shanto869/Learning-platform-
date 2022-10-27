@@ -116,7 +116,7 @@ const Login = () => {
 
 
     return (
-        <div className='w-50 mx-auto mt-4 form-container'>
+        <div className='w-50 mx-auto my-4 form-container'>
             <h4 className='text-center mb-4'>Hello!!! Login Your Account</h4>
             <Form onSubmit={handleSubmit} className='form'>
 
@@ -131,7 +131,7 @@ const Login = () => {
                 </Form.Group>
 
 
-                <Button variant="primary" type="submit" className='w-100 my-2 '>
+                <Button variant="primary" type="submit" className='w-100 my-2 py-3 '>
                     Login
                 </Button>
             </Form>
@@ -143,7 +143,7 @@ const Login = () => {
 
             <div className='mx-auto w-100 text-center mt-3'>
                 <small>Or Login Using</small>
-                <div className='mt-2'>
+                <div className='mt-2 fs-4 display-2'>
                     <FaGooglePlus onClick={handleGoogleSignIn} className='icons me-2'></FaGooglePlus>
                     <FaGithub onClick={handleGitSignIn} className='icons'></FaGithub>
                 </div>

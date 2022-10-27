@@ -14,7 +14,7 @@ const CheckOut = () => {
     }
 
     return (
-        <div className=' mt-4'>
+        <div className='mt-4 mb-5'>
             <h4 className='text-center mb-4'>Start Your Journey With Us</h4>
             <div className=' d-flex justify-content-center'>
                 <div className="card mb-3 checkout" style={{ maxWidth: '540px' }}>
