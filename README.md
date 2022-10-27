@@ -13,6 +13,7 @@ Live Website Link: [https://learning-platform-e8b56.web.app/](https://learning-p
 * React JS
 * React Router DOM
 * Express js
+* Firebase
 
 
 ### List of features and functionality that I have Used in my projects: 
