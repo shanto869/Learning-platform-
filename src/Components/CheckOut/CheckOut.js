@@ -17,17 +17,17 @@ const CheckOut = () => {
         <div className='mx-5 px-5 mt-4'>
             <h4 className='text-center mb-4'>Start Your Journey With Us</h4>
             <div className=' d-flex justify-content-center'>
-                <div className="card mb-3" style={{ maxWidth: '540px' }}>
+                <div className="card mb-3 checkout" style={{ maxWidth: '540px' }}>
                     <div className="row g-0">
                         <div className="col-md-4">
-                            <img src={picture} className="img-fluid h-100 rounded-start" alt="..." />
+                            <img src={picture} className="img-fluid h-100 rounded" alt="..." />
                         </div>
                         <div className="col-md-8">
                             <div className="card-body">
                                 <div className="d-flex justify-content-between">
                                     <h5 className="card-title">{course_title}</h5>
                                     <span className='text-muted'>
-                                        <FaStar></FaStar> <small > {ratings}</small>
+                                        <FaStar className='text-warning'></FaStar> <small > {ratings}</small>
                                     </span>
                                 </div>
                                 <div className='d-flex justify-content-between align-items-end'>

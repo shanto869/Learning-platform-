@@ -32,16 +32,16 @@ export const routers = createBrowserRouter([
             },
             {
                 path: '/course/:id', element: <CourseDetails></CourseDetails>,
-                loader: ({ params }) => fetch(`http://localhost:5000/course/${params.id}`)
+                loader: ({ params }) => fetch(`https://learning-platform-server-swart.vercel.app/course/${params.id}`)
             },
             {
                 path: '/checkout/:id',
                 element: <PrivateRoute><CheckOut></CheckOut></PrivateRoute>,
-                loader: ({ params }) => fetch(`http://localhost:5000/course/${params.id}`)
+                loader: ({ params }) => fetch(`https://learning-platform-server-swart.vercel.app/course/${params.id}`)
             },
             {
                 path: '/courses', element: <Courses></Courses>,
-                loader: () => fetch('http://localhost:5000/courses')
+                loader: () => fetch('https://learning-platform-server-swart.vercel.app/courses')
             },
 
         ]

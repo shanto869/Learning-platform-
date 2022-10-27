@@ -29,10 +29,11 @@ const Header = () => {
         <div>
             <nav className="navbar navbar-expand-lg background text-white ">
                 <div className="container">
-                    <Link className="navbar-brand fs-2 fw-bold text-yellow font-ubuntu" to="/">
+                    <Link className="navbar-brand fs-3 fw-bold text-yellow font-ubuntu" to="/">
                         <FaBuffer></FaBuffer>
                         <span className="logo-color "> Better </span>
-                        Learning</Link>
+                        Learning
+                    </Link>
                     <button className="navbar-toggler text-white" type="button" data-bs-toggle="collapse"
                         data-bs-target="#navbar-menu" aria-controls="navbar-menu" aria-expanded="false"
                         aria-label="Toggle navigation">

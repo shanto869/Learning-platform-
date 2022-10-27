@@ -15,6 +15,7 @@
 
 .side-nav {
     text-decoration: none;
+    color: #1e38a3;
     transition: all linear .3s;
 }
 
@@ -34,7 +35,9 @@
 
 .side-nav-btn {
     border-color: #6440fb;
-    border-radius: 10px !important;
+}
+
+.link {
     border: none;
 }
 

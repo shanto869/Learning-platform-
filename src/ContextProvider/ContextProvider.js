@@ -1,6 +1,6 @@
 import React from 'react';
 import { createContext } from 'react';
-import { createUserWithEmailAndPassword, getAuth, onAuthStateChanged, sendEmailVerification, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile } from 'firebase/auth'
+import { createUserWithEmailAndPassword, getAuth, onAuthStateChanged, sendEmailVerification, sendPasswordResetEmail, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile } from 'firebase/auth'
 import app from '../Firebase/firebase.config';
 import { useState } from 'react';
 import { useEffect } from 'react';
@@ -9,7 +9,7 @@ export const AuthContext = createContext();
 const auth = getAuth(app)
 
 const ContextProvider = ({ children }) => {
-    const [user, setUser] = useState('shanto');
+    const [user, setUser] = useState(null);
     const [loader, setLoader] = useState(true)
 
 
@@ -34,6 +34,11 @@ const ContextProvider = ({ children }) => {
     const updateUserProfile = (profile) => {
         setLoader(true)
         return updateProfile(auth.currentUser, profile)
+    }
+
+    // password reset email
+    const resetPassword = (email) => {
+        return sendPasswordResetEmail(auth, email)
     }
 
     // sign in with google
@@ -66,7 +71,7 @@ const ContextProvider = ({ children }) => {
         return () => unSubcribe()
     }, [])
 
-    const authInfo = { user, loader, createUserWithEmail, signInUser, updateUserProfile, signInWithGoogle, signInWithGitHub, logOut, verifyEmail }
+    const authInfo = { user, loader, createUserWithEmail, resetPassword, signInUser, updateUserProfile, signInWithGoogle, signInWithGitHub, logOut, verifyEmail }
 
     return (
         <div>

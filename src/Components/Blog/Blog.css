@@ -1,0 +1,15 @@
+.accordion {
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.interview-container>h4 {
+    margin-left: 6%;
+    font-weight: 400;
+    padding-top: 80px !important;
+}
+
+@media screen and (max-width: 750px) {
+    .interview-container {
+        padding-top: 50px;
+    }
+}

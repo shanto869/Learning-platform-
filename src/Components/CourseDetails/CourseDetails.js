@@ -1,7 +1,6 @@
 import React from 'react';
 import './CourseDetails.css'
 import { Link, useLoaderData } from 'react-router-dom';
-import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import { FaDownload, FaStar } from 'react-icons/fa';
 
@@ -10,11 +9,13 @@ const CourseDetails = () => {
     const detail = useLoaderData();
     const { course_price, course_title, details, id, instractor, instractor_img, picture, purchase_quantity, ratings, total_classes, instractor_qualification } = detail;
 
+    const ref = React.createRef();
+
     return (
         <div className='mx-5 px-5 mt-5'>
             <Card className="px-4">
                 <Card.Header className='d-flex justify-content-between'>
-                    <span><strong className='text-muted'>Ratings: {ratings} <FaStar></FaStar> </strong></span>
+                    <span><strong className='text-muted'>Ratings: {ratings} <FaStar className='text-warning'></FaStar> </strong></span>
                     <span>
                         <FaDownload className='download-icon'></FaDownload>
                     </span>
@@ -26,7 +27,7 @@ const CourseDetails = () => {
                         <span className='pb-4'>
                             <small className='text-muted me-3'>Total Classes: {total_classes}</small>
                             <small className='text-muted mx-3'>Enrolled: {purchase_quantity} students</small>
-                            <small className='text-muted mx-3'>Rattings: {ratings} <FaStar></FaStar></small>
+                            <small className='text-muted mx-3'>Rattings: {ratings} <FaStar className='text-warning'></FaStar></small>
 
                             <div className='my-4'>
                                 <strong className='d-block mb-3'>Course Instractor</strong>
@@ -50,7 +51,7 @@ const CourseDetails = () => {
                         </span>
                     </>
                     <span className='d-flex justify-content-end align-items-center mt-4'>
-                        <h5>Price of the course: {course_price}</h5>
+                        <h5>Price of the course: <span className='price'>{course_price}</span></h5>
                         <Link to={`/checkout/${id}`}>
                             <button className='ms-5 border-none button-style side-nav-btn rounded-pill px-5 py-3'>Get Primium Access</button>
                         </Link>

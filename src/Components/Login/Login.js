@@ -8,9 +8,12 @@ import { useContext } from 'react';
 import { AuthContext } from '../../ContextProvider/ContextProvider';
 import { GithubAuthProvider, GoogleAuthProvider } from 'firebase/auth';
 import toast from 'react-hot-toast';
+import { useState } from 'react';
 
 const Login = () => {
-    const { signInUser, signInWithGoogle, signInWithGitHub, verifyEmail } = useContext(AuthContext);
+    const [userEmail, setUserEmail] = useState('')
+
+    const { signInUser, resetPassword, signInWithGoogle, signInWithGitHub, verifyEmail } = useContext(AuthContext);
 
     const googleProvider = new GoogleAuthProvider();
     const gitProvider = new GithubAuthProvider();
@@ -35,7 +38,7 @@ const Login = () => {
                 toast.success('Successfully Loged in')
                 handleEamilVerfication()
 
-                if (user) {
+                if (user && user?.uid) {
                     navigate(from, { replace: true })
                 }
                 // else {
@@ -47,11 +50,27 @@ const Login = () => {
             })
     }
 
+    const handleEmaiValue = (event) => {
+        const email = event.target.value;
+        setUserEmail(email)
+    }
+
     // email verification
     const handleEamilVerfication = () => {
         verifyEmail()
             .then(() => { })
             .catch(error => toast.error(error))
+    }
+
+    // reset eamil
+    const handleResetPassword = () => {
+        resetPassword(userEmail)
+            .then(() => {
+                toast.success('please check your email and reset password')
+            })
+            .catch(error => {
+                toast.error(error.message)
+            })
     }
 
     // google sing in
@@ -88,7 +107,7 @@ const Login = () => {
 
                 <Form.Group className="mb-3" controlId="formBasicEmail">
                     <Form.Label>Email address</Form.Label>
-                    <Form.Control name='email' type="email" placeholder="user email" className='input-field' required />
+                    <Form.Control onBlur={handleEmaiValue} name='email' type="email" placeholder="user email" className='input-field' required />
                 </Form.Group>
 
                 <Form.Group className="mb-3" controlId="formBasicPassword">
@@ -102,7 +121,8 @@ const Login = () => {
                 </Button>
             </Form>
             <div className='d-flex justify-content-between'>
-                <Link to='' className='d-block text-decoration-none'><small>Forget Password?</small></Link>
+                <Link to='' onClick={handleResetPassword} className='d-block text-decoration-none'>
+                    <small>Forget Password?</small></Link>
                 <Link to='/register' className='text-decoration-none'><small>Create Account</small></Link>
             </div>
 

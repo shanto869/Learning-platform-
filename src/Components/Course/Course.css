@@ -24,3 +24,11 @@
 .course-card .img-container:hover .course-img {
     transform: scale(1.1);
 }
+
+.course-name {
+    color: #1e38a3;
+}
+
+.price {
+    color: #1e38a3;
+}

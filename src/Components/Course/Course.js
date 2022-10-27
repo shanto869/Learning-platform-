@@ -16,8 +16,8 @@ const Course = ({ course }) => {
                 </Link>
             </div>
             <div className='px-3'>
-                <h5 className='my-3'><Link to={`/course/${id}`} className='title'>{course_title}</Link></h5>
-                <strong className='d-block'>Ratings: {ratings} <FaStar></FaStar>  </strong>
+                <h5 className='my-3'><Link to={`/course/${id}`} className='title course-name'>{course_title}</Link></h5>
+                <strong className='d-block'>Ratings: {ratings} <FaStar className='text-warning'></FaStar>  </strong>
                 <strong>Enrolled: {purchase_quantity}</strong>
                 <hr />
                 <div className='d-flex justify-content-between'>
@@ -25,7 +25,7 @@ const Course = ({ course }) => {
                         <img style={{ height: '30px', width: '30px' }} className='rounded-circle me-2' src={instractor_img} alt="" />
                         <small className='text-muted'>{instractor}</small>
                     </span>
-                    <strong>{course_price}</strong>
+                    <strong className='price' >{course_price}</strong>
                 </div>
             </div>
         </div>
