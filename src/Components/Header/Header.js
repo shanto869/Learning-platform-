@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './Header.css'
 import { Link, NavLink } from 'react-router-dom';
-import { FaToggleOn, FaToggleOff, FaBuffer } from 'react-icons/fa'
+import { FaToggleOn, FaToggleOff, FaBuffer, FaBars } from 'react-icons/fa'
 import { useContext } from 'react';
 import { AuthContext } from '../../ContextProvider/ContextProvider';
 import { Image, Tooltip } from 'react-bootstrap';
@@ -37,6 +37,7 @@ const Header = () => {
                     <button className="navbar-toggler text-white" type="button" data-bs-toggle="collapse"
                         data-bs-target="#navbar-menu" aria-controls="navbar-menu" aria-expanded="false"
                         aria-label="Toggle navigation">
+                        <FaBars></FaBars>
                     </button>
                     <div className="collapse navbar-collapse menu-font fs-6" id="navbar-menu">
                         <div className="navbar-nav ms-auto text-white">

@@ -12,7 +12,7 @@ const CourseDetails = () => {
     const ref = React.createRef();
 
     return (
-        <div className='mx-5 px-5 mt-5'>
+        <div className='mx-lg-5 px-lg-5 mx-md-1 px-md-1 mt-5'>
             <Card className="px-4">
                 <Card.Header className='d-flex justify-content-between'>
                     <span><strong className='text-muted'>Ratings: {ratings} <FaStar className='text-warning'></FaStar> </strong></span>
@@ -50,10 +50,10 @@ const CourseDetails = () => {
                             <img src={picture} className='img-fluid rounded' alt="" />
                         </span>
                     </>
-                    <span className='d-flex justify-content-end align-items-center mt-4'>
-                        <h5>Price of the course: <span className='price'>{course_price}</span></h5>
+                    <span className='d-flex justify-content-lg-end justify-content-md-end align-items-center mt-4'>
+                        <h5>Price: <span className='price'>{course_price}</span></h5>
                         <Link to={`/checkout/${id}`}>
-                            <button className='ms-5 border-none button-style side-nav-btn rounded-pill px-5 py-3'>Get Primium Access</button>
+                            <button className='ms-lg-5 ms-md-4 ms-sm-3 ms-2 border-none button-style side-nav-btn rounded-pill px-lg-5 px-3 px-md-4 py-lg-3 py-md-3 py-2'>Get Primium Access</button>
                         </Link>
 
                     </span>

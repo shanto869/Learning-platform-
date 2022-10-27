@@ -20,7 +20,7 @@
 }
 
 .home-banner .home-content p {
-    padding: 10px 400px;
+    padding: 10px 200px;
 }
 
 .button-style {
@@ -37,4 +37,11 @@
 
 .navbar button:focus {
     box-shadow: none;
+}
+
+@media screen and (max-width: 700px) {
+    .home-banner .home-content p {
+        padding: 10px 30px;
+    }
+
 }

@@ -22,7 +22,21 @@ const Register = () => {
         const photoUrl = form.photoUrl.value;
         const email = form.email.value;
         const password = form.password.value;
-        console.log(name, photoUrl, email, password);
+
+        // password validation
+        if (!/(?=.*[A-Z])/.test(password)) {
+            toast.error('Password should contains a Capital letter')
+            return;
+        }
+
+        if (password < 6) {
+            toast.error('Password should be at least 6 characters');
+            return;
+        }
+
+        if (!/(?=.*[!@#$%^&*])/.test(password)) {
+            toast.error('Please add at least one special character')
+        }
 
         // create user
         createUserWithEmail(email, password)
@@ -82,7 +96,7 @@ const Register = () => {
             <Form onSubmit={handleSubmit} className='form'>
 
                 <Form.Group className="mb-3" controlId="formBasicEmail">
-                    <Form.Label>Your Name</Form.Label>
+                    <Form.Label>Your Full Name</Form.Label>
                     <Form.Control name='name' type="text" placeholder="user name" className='input-field' required />
                 </Form.Group>
 
