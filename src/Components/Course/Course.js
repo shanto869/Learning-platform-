@@ -16,16 +16,16 @@ const Course = ({ course }) => {
                 </Link>
             </div>
             <div className='px-3'>
-                <h5 className='my-3'><Link to={`/course/${id}`} className='title course-name'>{course_title}</Link></h5>
-                <strong className='d-block'>Ratings: {ratings} <FaStar className='text-warning'></FaStar>  </strong>
-                <strong>Enrolled: {purchase_quantity}</strong>
+                <h5 className='my-3'><Link to={`/course/${id}`} className='title course-name heading-font'>{course_title}</Link></h5>
+                <strong className='d-block'>Ratings: {ratings} <FaStar className='text-warning font-ubuntu'></FaStar>  </strong>
+                <strong>Enrolled: <span className='font-font-ubuntu'>{purchase_quantity}</span></strong>
                 <hr />
                 <div className='d-flex justify-content-between'>
                     <span>
                         <img style={{ height: '30px', width: '30px' }} className='rounded-circle me-2' src={instractor_img} alt="" />
                         <small className='text-muted'>{instractor}</small>
                     </span>
-                    <strong className='price' >{course_price}</strong>
+                    <strong className='price font-ubuntu fs-5' >{course_price}</strong>
                 </div>
             </div>
         </div>

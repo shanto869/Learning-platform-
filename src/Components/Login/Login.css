@@ -14,8 +14,9 @@
 
 .form-container .input-field {
     border: none;
-    border-bottom: 1px solid gray;
-    border-bottom-width: 80%;
+    border-bottom: 1px solid #6440fb;
+    padding: 12px 10px;
+    border-bottom-width: 80% !important;
     background-color: white;
 }
 

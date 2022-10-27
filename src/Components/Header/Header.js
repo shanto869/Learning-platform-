@@ -39,15 +39,14 @@ const Header = () => {
                         aria-label="Toggle navigation">
                         <FaBars></FaBars>
                     </button>
-                    <div className="collapse navbar-collapse menu-font fs-6" id="navbar-menu">
-                        <div className="navbar-nav ms-auto text-white">
+                    <div className="collapse navbar-collapse menu-font fs-6 " id="navbar-menu">
+                        <div className="navbar-nav ms-auto text-white align-items-center">
                             <NavLink className="nav-link nav-hover" aria-current="page" to="/courses">Courses</NavLink>
-                            <NavLink className="nav-link nav-hover" aria-current="page" to="/FAQ">FAQ</NavLink>
                             <NavLink className="nav-link nav-hover" to="/blog">Blog</NavLink>
 
                             {
                                 user && user?.uid ?
-                                    <p className='ms-2 d-flex'>
+                                    <div className='ms-2 d-flex align-items-center'>
                                         <OverlayTrigger placement="bottom"
                                             overlay={<Tooltip id="button-tooltip-2">{user?.displayName}</Tooltip>}>
                                             <Image src={user?.photoURL} style={{ width: '35px', height: '35px' }} roundedCircle></Image>
@@ -57,16 +56,19 @@ const Header = () => {
                                             <NavLink className="nav-link nav-hover log-in"><span onClick={handleLogOut}>Sign Out</span></NavLink>
 
                                         </span>
-                                    </p>
+                                    </div>
                                     :
                                     <>
                                         <NavLink to="/login" className="nav-link nav-hover log-in">
                                             Login
                                         </NavLink>
+                                        <NavLink to="/register" className="nav-link nav-hover log-in">
+                                            Register
+                                        </NavLink>
                                     </>
                             }
 
-                            <NavLink className="nav-link">
+                            <NavLink className="nav-link fs-3">
                                 {
                                     darkTheme ? <FaToggleOn onClick={() => setDarkTheme(!darkTheme)}></FaToggleOn> : <FaToggleOff onClick={() => setDarkTheme(!darkTheme)}></FaToggleOff>
                                 }

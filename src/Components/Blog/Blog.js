@@ -6,9 +6,9 @@ const Blog = () => {
     return (
         <div>
             <div className='mb-5 interview-container'>
-                <h4 className='mt-5'>Interview Question</h4>
+                <h4 className='mt-0'>Interview Question</h4>
 
-                <div className="accordion accordion-flush w-75 mx-auto mt-4" id="accordionFlushExample">
+                <div className="accordion accordion-flush w-75 mx-auto mt-3" id="accordionFlushExample">
                     <div className="accordion-item">
                         <h2 className="accordion-header  py-3" id="flush-headingOne">
                             <button className="accordion-button collapsed fs-5 heading-color heading-font"

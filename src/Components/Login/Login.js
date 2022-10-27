@@ -30,13 +30,13 @@ const Login = () => {
         const password = form.password.value;
 
         // password validation
-        if (!/(?=.*[A-Z])/.test(password)) {
-            toast.error('Password should contains a Capital letter')
+        if (password < 6) {
+            toast.error('Password should be at least 6 characters');
             return;
         }
 
-        if (password < 6) {
-            toast.error('Password should be at least 6 characters');
+        if (!/(?=.*[A-Z])/.test(password)) {
+            toast.error('Password should contains a Capital letter')
             return;
         }
 
@@ -117,21 +117,21 @@ const Login = () => {
 
     return (
         <div className='w-50 mx-auto my-4 form-container'>
-            <h4 className='text-center mb-4'>Hello!!! Login Your Account</h4>
+            <h4 className='text-center mb-4 menu-font'>Hello!!! Login Your Account</h4>
             <Form onSubmit={handleSubmit} className='form'>
 
                 <Form.Group className="mb-3" controlId="formBasicEmail">
-                    <Form.Label>Email address</Form.Label>
+                    <Form.Label className='menu-font'>Email address</Form.Label>
                     <Form.Control onBlur={handleEmaiValue} name='email' type="email" placeholder="user email" className='input-field' required />
                 </Form.Group>
 
                 <Form.Group className="mb-3" controlId="formBasicPassword">
-                    <Form.Label>Password</Form.Label>
+                    <Form.Label className='menu-font'>Password</Form.Label>
                     <Form.Control name='password' type="password" placeholder="password" className='input-field' required />
                 </Form.Group>
 
 
-                <Button variant="primary" type="submit" className='w-100 my-2 py-3 '>
+                <Button variant="primary" type="submit" className='w-100 my-2 py-3 font-font-ubuntu'>
                     Login
                 </Button>
             </Form>

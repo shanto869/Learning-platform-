@@ -24,13 +24,13 @@ const Register = () => {
         const password = form.password.value;
 
         // password validation
-        if (!/(?=.*[A-Z])/.test(password)) {
-            toast.error('Password should contains a Capital letter')
+        if (password < 6) {
+            toast.error('Password should be at least 6 characters');
             return;
         }
 
-        if (password < 6) {
-            toast.error('Password should be at least 6 characters');
+        if (!/(?=.*[A-Z])/.test(password)) {
+            toast.error('Password should contains a Capital letter')
             return;
         }
 
@@ -91,32 +91,32 @@ const Register = () => {
 
 
     return (
-        <div className='w-50 mx-auto mb-4 form-container'>
-            <h4 className='text-center mb-4'>Sign Up Account</h4>
+        <div className='w-50 mx-auto my-4 form-container'>
+            <h4 className='text-center mb-4 menu-font'>Sign Up Account</h4>
             <Form onSubmit={handleSubmit} className='form'>
 
                 <Form.Group className="mb-3" controlId="formBasicEmail">
-                    <Form.Label>Your Full Name</Form.Label>
+                    <Form.Label className='menu-font'>Your Full Name</Form.Label>
                     <Form.Control name='name' type="text" placeholder="user name" className='input-field' required />
                 </Form.Group>
 
                 <Form.Group className="mb-3" controlId="formBasicEmail">
-                    <Form.Label>Photo URL</Form.Label>
+                    <Form.Label className='menu-font'>Photo URL</Form.Label>
                     <Form.Control name='photoUrl' type="text" placeholder="user photo url" className='input-field' required />
                 </Form.Group>
 
                 <Form.Group className="mb-3" controlId="formBasicEmail">
-                    <Form.Label>Email address</Form.Label>
+                    <Form.Label className='menu-font'>Email address</Form.Label>
                     <Form.Control name='email' type="email" placeholder="user email" className='input-field' required />
                 </Form.Group>
 
                 <Form.Group className="mb-3" controlId="formBasicPassword">
-                    <Form.Label>Password</Form.Label>
+                    <Form.Label className='menu-font'>Password</Form.Label>
                     <Form.Control name='password' type="password" placeholder="password" className='input-field' required />
                 </Form.Group>
 
 
-                <Button variant="primary" type="submit" className='w-100 my-2 '>
+                <Button variant="primary" type="submit" className='w-100 my-2 py-3 font-ubuntu'>
                     Sign Up
                 </Button>
             </Form>
@@ -127,7 +127,7 @@ const Register = () => {
 
             <div className='mx-auto w-100 text-center mt-3'>
                 <small>Or Sign Up Using</small>
-                <div className='mt-2'>
+                <div className='mt-2 fs-3'>
                     <FaGooglePlus onClick={handleGoogleSignIn} className='icons me-2'></FaGooglePlus>
                     <FaGithub onClick={handleGitSignIn} className='icons'></FaGithub>
                 </div>

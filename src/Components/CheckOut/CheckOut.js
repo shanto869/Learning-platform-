@@ -15,7 +15,7 @@ const CheckOut = () => {
 
     return (
         <div className='mt-4 mb-5'>
-            <h4 className='text-center mb-4'>Start Your Journey With Us</h4>
+            <h4 className='text-center mb-4 font-ubuntu'>Start Your Journey With Us</h4>
             <div className=' d-flex justify-content-center'>
                 <div className="card mb-3 checkout" style={{ maxWidth: '540px' }}>
                     <div className="row g-0">
@@ -25,7 +25,7 @@ const CheckOut = () => {
                         <div className="col-md-8">
                             <div className="card-body">
                                 <div className="d-flex justify-content-between">
-                                    <h5 className="card-title">{course_title}</h5>
+                                    <h5 className="card-title heading-font">{course_title}</h5>
                                     <span className='text-muted'>
                                         <FaStar className='text-warning'></FaStar> <small > {ratings}</small>
                                     </span>
@@ -39,7 +39,7 @@ const CheckOut = () => {
 
                                     </div>
                                     <p className="card-text">
-                                        <button onClick={handleEnroll} className='border-none px-2 py-2 button-style side-nav-btn rounded-pill px-5 py-2'>Enroll Now</button>
+                                        <button onClick={handleEnroll} className='border-none px-2 py-2 button-style side-nav-btn rounded-pill px-5 py-2 font-ubuntu'>Enroll Now</button>
                                     </p>
                                 </div>
                             </div>
