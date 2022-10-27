@@ -3,6 +3,24 @@
 }
 
 .course-card {
-    box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+    box-shadow: rgba(0, 0, 0, 0.09) 0px 3px 12px 0px;
     padding-bottom: 15px;
+    transition: all linear .3s;
+}
+
+.course-card:hover {
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+}
+
+.course-card .img-container {
+    overflow: hidden;
+}
+
+.course-card .img-container .course-img {
+    transition: all linear .3s;
+
+}
+
+.course-card .img-container:hover .course-img {
+    transform: scale(1.1);
 }

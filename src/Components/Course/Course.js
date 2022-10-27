@@ -10,7 +10,11 @@ const Course = ({ course }) => {
 
     return (
         <div className='mb-4 course-card rounded'>
-            <img src={picture} alt="" className='w-100 rounded' />
+            <div className='img-container rounded'>
+                <Link to={`/course/${id}`}>
+                    <img src={picture} alt="" className='w-100 rounded course-img' />
+                </Link>
+            </div>
             <div className='px-3'>
                 <h5 className='my-3'><Link to={`/course/${id}`} className='title'>{course_title}</Link></h5>
                 <strong className='d-block'>Ratings: {ratings} <FaStar></FaStar>  </strong>

@@ -52,7 +52,7 @@ const CourseDetails = () => {
                     <span className='d-flex justify-content-end align-items-center mt-4'>
                         <h5>Price of the course: {course_price}</h5>
                         <Link to={`/checkout/${id}`}>
-                            <Button className='ms-5 px-4 py-3 btn button-style'>Get Primium Access</Button>
+                            <button className='ms-5 border-none button-style side-nav-btn rounded-pill px-5 py-3'>Get Primium Access</button>
                         </Link>
 
                     </span>

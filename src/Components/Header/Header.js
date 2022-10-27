@@ -52,13 +52,13 @@ const Header = () => {
                                         </OverlayTrigger>
 
                                         <span className='d-inline'>
-                                            <NavLink className="nav-link nav-hover"><span onClick={handleLogOut}>Sign Out</span></NavLink>
+                                            <NavLink className="nav-link nav-hover log-in"><span onClick={handleLogOut}>Sign Out</span></NavLink>
 
                                         </span>
                                     </p>
                                     :
                                     <>
-                                        <NavLink to="/login" className="nav-link nav-hover">
+                                        <NavLink to="/login" className="nav-link nav-hover log-in">
                                             Login
                                         </NavLink>
                                     </>

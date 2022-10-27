@@ -57,6 +57,7 @@
     font-weight: 500;
 }
 
+
 .active,
 .text-yellow {
     color: #ffc107 !important;
@@ -80,6 +81,15 @@
 
 .background3 {
     background-color: #e9ebf7;
+}
+
+.log-in {
+    color: #ff5a3c !important;
+    transition: all linear .3s;
+}
+
+.log-in:hover {
+    color: #ffc221 !important;
 }
 
 @media screen and (max-width: 576px) {}

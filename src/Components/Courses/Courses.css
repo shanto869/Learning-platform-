@@ -7,7 +7,7 @@
 }
 
 .course-title {
-    box-shadow: rgba(17, 17, 26, 0.1) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 48px;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px 0px;
     padding: 30px 40px;
     border-radius: 10px;
     padding-bottom: 50px;
@@ -23,7 +23,6 @@
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 20px;
     padding: 10px;
-    /* box-shadow: rgba(17, 17, 26, 0.1) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 48px; */
     border-radius: 8px;
 }
 
@@ -35,7 +34,8 @@
 
 .side-nav-btn {
     border-color: #6440fb;
-    /* transition: cubic-bezier(0.25, 0.46, 0.45, 0.94); */
+    border-radius: 10px !important;
+    border: none;
 }
 
 .side-nav-btn:hover .side-nav {

@@ -10,11 +10,11 @@ const Courses = () => {
     return (
         <div className='courses-container'>
             <div className='course-title'>
-                <h5>Total Courses: {courses.length}</h5>
+                <h5 className='mb-3'>Our Courses</h5>
                 <span className='side-navbar'>
                     {
                         courses.map(course => <>
-                            <button className='rounded border-none px-2 py-2 button-style side-nav-btn'>
+                            <button className='rounded-2 border-none px-2 py-2 button-style side-nav-btn'>
                                 <NavLink to={`/course/${course.id}`}
                                     key={course.id} className="side-nav d-block" >{course.course_title}
                                 </NavLink>
