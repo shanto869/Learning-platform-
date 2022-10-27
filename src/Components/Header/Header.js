@@ -38,7 +38,7 @@ const Header = () => {
                         aria-label="Toggle navigation">
                     </button>
                     <div className="collapse navbar-collapse menu-font fs-6" id="navbar-menu">
-                        <div className="navbar-nav ms-auto text-white                                            ">
+                        <div className="navbar-nav ms-auto text-white">
                             <NavLink className="nav-link nav-hover" aria-current="page" to="/courses">Courses</NavLink>
                             <NavLink className="nav-link nav-hover" aria-current="page" to="/FAQ">FAQ</NavLink>
                             <NavLink className="nav-link nav-hover" to="/blog">Blog</NavLink>
