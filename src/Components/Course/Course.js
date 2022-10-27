@@ -9,7 +9,7 @@ const Course = ({ course }) => {
     const { course_title, course_price, id, picture, purchase_quantity, ratings, instractor_img, instractor } = course;
 
     return (
-        <div className='mb-4'>
+        <div className='mb-4 course-card rounded'>
             <img src={picture} alt="" className='w-100 rounded' />
             <div className='px-3'>
                 <h5 className='my-3'><Link to={`/course/${id}`} className='title'>{course_title}</Link></h5>

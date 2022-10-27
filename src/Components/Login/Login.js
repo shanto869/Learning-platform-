@@ -3,17 +3,21 @@ import './Login.css'
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import { FaGithub, FaGooglePlus, FaGooglePlusG } from 'react-icons/fa';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useContext } from 'react';
 import { AuthContext } from '../../ContextProvider/ContextProvider';
 import { GithubAuthProvider, GoogleAuthProvider } from 'firebase/auth';
 import toast from 'react-hot-toast';
 
 const Login = () => {
-    const { signInUser, signInWithGoogle, signInWithGitHub } = useContext(AuthContext);
+    const { signInUser, signInWithGoogle, signInWithGitHub, verifyEmail } = useContext(AuthContext);
 
     const googleProvider = new GoogleAuthProvider();
     const gitProvider = new GithubAuthProvider();
+
+    const navigate = useNavigate();
+    const location = useLocation();
+    const from = location.state?.from?.pathname || '/';
 
     const handleSubmit = (event) => {
         event.preventDefault();
@@ -29,10 +33,25 @@ const Login = () => {
                 const user = result.user;
                 console.log(user)
                 toast.success('Successfully Loged in')
+                handleEamilVerfication()
+
+                if (user) {
+                    navigate(from, { replace: true })
+                }
+                // else {
+                //     toast.error('Your email is not verified. Please Verified Email')
+                // }
             })
             .catch(error => {
                 toast.error(error.message)
             })
+    }
+
+    // email verification
+    const handleEamilVerfication = () => {
+        verifyEmail()
+            .then(() => { })
+            .catch(error => toast.error(error))
     }
 
     // google sing in

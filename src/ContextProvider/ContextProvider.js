@@ -1,6 +1,6 @@
 import React from 'react';
 import { createContext } from 'react';
-import { createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile } from 'firebase/auth'
+import { createUserWithEmailAndPassword, getAuth, onAuthStateChanged, sendEmailVerification, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile } from 'firebase/auth'
 import app from '../Firebase/firebase.config';
 import { useState } from 'react';
 import { useEffect } from 'react';
@@ -23,6 +23,11 @@ const ContextProvider = ({ children }) => {
     const signInUser = (email, password) => {
         setLoader(true)
         return signInWithEmailAndPassword(auth, email, password)
+    }
+
+    // email verification
+    const verifyEmail = () => {
+        return sendEmailVerification(auth.currentUser)
     }
 
     // update profile
@@ -61,7 +66,7 @@ const ContextProvider = ({ children }) => {
         return () => unSubcribe()
     }, [])
 
-    const authInfo = { user, loader, createUserWithEmail, signInUser, updateUserProfile, signInWithGoogle, signInWithGitHub, logOut, }
+    const authInfo = { user, loader, createUserWithEmail, signInUser, updateUserProfile, signInWithGoogle, signInWithGitHub, logOut, verifyEmail }
 
     return (
         <div>
